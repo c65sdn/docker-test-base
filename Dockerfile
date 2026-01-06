@@ -3,14 +3,14 @@
 
 FROM debian:bookworm
 
-ENV OVSV "v3.6.0"
-ENV MININETV "2.3.1b4"
+ENV OVSV="v3.6.0"
+ENV MININETV="2.3.1b4"
 
-ENV AG "apt-get -y --no-install-recommends -o=Dpkg::Use-Pty=0"
-ENV DEBIAN_FRONTEND "noninteractive"
-ENV BUILD_DIR "/var/tmp/build"
-ENV BUILD_DEPS "devscripts"
-ENV PATH "/venv/bin:$PATH"
+ENV AG="apt-get -y --no-install-recommends -o=Dpkg::Use-Pty=0"
+ENV DEBIAN_FRONTEND="noninteractive"
+ENV BUILD_DIR="/var/tmp/build"
+ENV BUILD_DEPS="devscripts"
+ENV PATH="/venv/bin:$PATH"
 
 COPY bin/setup.sh /
 COPY bin/setupproxy.sh /
@@ -86,6 +86,6 @@ RUN mkdir -p ${BUILD_DIR} \
     && rm -rf "${BUILD_DIR}"
 
 RUN ovsdb-tool --help
-ENV LC_ALL en_US.UTF-8
-ENV LANG en_US.UTF-8
-ENV LANGUAGE en_US.UTF-8
+ENV LC_ALL=en_US.UTF-8
+ENV LANG=en_US.UTF-8
+ENV LANGUAGE=en_US.UTF-8
