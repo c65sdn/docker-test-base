@@ -3,14 +3,14 @@
 
 FROM debian:trixie
 
-ENV OVSV="v3.6.0"
-ENV MININETV="2.3.1b4"
+ENV OVSV "v3.6.0"
+ENV MININETV "2.3.1b4"
 
-ENV AG="apt-get -y --no-install-recommends -o=Dpkg::Use-Pty=0"
-ENV DEBIAN_FRONTEND=noninteractive
-ENV BUILD_DIR="/var/tmp/build"
-ENV BUILD_DEPS="devscripts software-properties-common"
-ENV PATH="/venv/bin:$PATH"
+ENV AG "apt-get -y --no-install-recommends -o=Dpkg::Use-Pty=0"
+ENV DEBIAN_FRONTEND "noninteractive"
+ENV BUILD_DIR "/var/tmp/build"
+ENV BUILD_DEPS "devscripts"
+ENV PATH "/venv/bin:$PATH"
 
 COPY bin/setup.sh /
 COPY bin/setupproxy.sh /
